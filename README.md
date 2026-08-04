@@ -1,7 +1,19 @@
-Hi,
+### Hi 👋
 
-My name is Seth Wheeler. I am someone who loves to program and enjoys collaborating with others.
+I'm **Seth Wheeler** — a software engineer who likes building systems from the
+ground up, and open-sourcing the ones worth sharing.
 
-I am fairly knowledgeable in: NodeJS, Unity, GraphQL, REST, Apache Cordova, HandlebarsJS, and Java, but have experience with other languages as well.
+Day to day I work on **platform & integration engineering** (Node.js
+microservices, Kubernetes, CI/CD) and, increasingly, **AI/LLM tooling** such as
+Model Context Protocol servers and retrieval-augmented assistants. For fun, I
+reimplement complex systems from scratch to actually understand them.
+
+**Working with:** JavaScript / TypeScript · Node.js · Python · SQL · Kubernetes ·
+Docker · CI/CD · MongoDB / Postgres · MCP &amp; LLM integration
+
+**A few things I've built:**
+- 🧩 [**nodejs-k8s**](https://github.com/Megapixel99/nodejs-k8s) — Kubernetes' core APIs reimplemented in pure Node.js, compatible with the real `kubectl`
+- 🔎 [**webCrawler**](https://github.com/Megapixel99/webCrawler) — a from-scratch search engine: distributed crawler + hand-built inverted index + BM25 ranking
+- 📦 [**Postmastr**](https://github.com/Megapixel99/Postmastr-Backend) — OCR-powered mailroom package tracker
 
 [![Megapixel99's GitHub stats](https://github-stats-extended.vercel.app/api?username=megapixel99&count_private=true&show_icons=true&theme=dracula)](https://github.com/anuraghazra/github-readme-stats)
