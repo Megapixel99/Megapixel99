@@ -9,7 +9,7 @@ Model Context Protocol servers and retrieval-augmented assistants. For fun, I
 reimplement complex systems from scratch to actually understand them.
 
 **Working with:** JavaScript / TypeScript · Node.js · Python · SQL · Kubernetes ·
-Docker · CI/CD · MongoDB / Postgres · MCP &amp; LLM integration
+Docker · CI/CD · MongoDB / Postgres · MCP & LLM integration
 
 **A few things I've built:**
 - 🧩 [**nodejs-k8s**](https://github.com/Megapixel99/nodejs-k8s) — Kubernetes' core APIs reimplemented in pure Node.js, compatible with the real `kubectl`
