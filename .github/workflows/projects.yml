@@ -1,0 +1,71 @@
+name: refresh projects
+
+# The project list in README.md is rendered from sethwheeler.dev/projects.json,
+# which the personal-site repo generates and reviews. Star counts move and
+# projects get added there; this keeps the profile from being the copy that goes
+# stale, which is what the hand-written list had already started doing.
+#
+# It reads the deployed site rather than the repository on purpose. personal-site
+# is private, and a workflow's GITHUB_TOKEN only reaches the repository it runs
+# in, so pulling the file over raw.githubusercontent.com would need a personal
+# access token kept here as a secret. The site is public, so this needs no
+# credentials at all.
+#
+# Nothing here decides what to list. A project appears because it was recorded
+# in projects.policy.json over there, where an unreviewed repository fails the
+# build. Keeping that judgement in one place is the whole point.
+
+on:
+  schedule:
+    # 05:00 UTC. The site's own projects workflow opens its PR earlier, and
+    # daily-rebuild.yml redeploys at 00:20, so by now /projects.json is whatever
+    # was last merged.
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-projects
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # No npm install: the script uses node builtins and fetch only.
+      - name: Render the list from the site
+        run: node scripts/render-projects.mjs
+
+      # An unreachable site exits non-zero above and never reaches this step, so
+      # a failed fetch leaves the README exactly as it was rather than emptying
+      # it. Committing only on a real diff keeps the history free of no-op runs.
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Refresh the project list from sethwheeler.dev"
+          git push
+
+      - name: Show the result
+        if: always()
+        run: |
+          {
+            echo '## project list'
+            echo
+            echo '```markdown'
+            sed -n '/projects:start/,/projects:end/p' README.md
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
