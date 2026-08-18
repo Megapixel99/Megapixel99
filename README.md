@@ -18,6 +18,8 @@ Kubernetes · Docker · CI/CD · MongoDB / Postgres · MCP and LLM integration
 
 - 🧩 [**nodejs-k8s**](https://github.com/Megapixel99/nodejs-k8s) · Kubernetes' core APIs reimplemented in Node. Point your real `kubectl` at it and it answers.
 - 📦 [**Postmastr**](https://github.com/Megapixel99/Postmastr-Backend) · A mailroom tracker that reads a shipping label off a photo and emails the recipient.
+- [**kestrel**](https://github.com/Megapixel99/kestrel) · A macOS browser with a memory budget for tabs. Above the budget's feasibility floor it holds 788 MB where discarding holds 802 MB, and destroys 6 tabs to its 8.
+- [**lambda-language**](https://github.com/Megapixel99/lambda-language) · A small language with four independent backends (C, WebAssembly, ARM64, a bytecode VM) that have to agree byte for byte, and a compiler for it written in itself.
 - 🎭 [**social-deduction-bench**](https://github.com/Megapixel99/social-deduction-bench) · Social deduction as an LLM benchmark, scored per turn and corrected for chance rather than ranked by win rate.
 - 🗄️ [**sql-nodejs**](https://github.com/Megapixel99/sql-nodejs) · An in-memory SQL engine with a hand-written parser and genuinely zero dependencies.
 - 🎬 [**video-timeline**](https://github.com/Megapixel99/video-timeline) · Hands a video to a language model as a measured timeline, not a pile of screenshots.
