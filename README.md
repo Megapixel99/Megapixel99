@@ -3,14 +3,20 @@
 I'm **Seth Wheeler**, a software engineer and graduate student.
 
 I work on platform and integration engineering (Node.js microservices, Kubernetes,
-CI/CD) and, increasingly, AI and LLM tooling such as Model Context Protocol servers
-and retrieval-augmented assistants.
+CI/CD), and lately on a family of small command line tools that ask whether a check
+is really checking anything: whether a green run executed a test at all, whether a
+guard is capable of failing, whether a function gives one answer to one input. Six
+of them are on PyPI (`assay-checks`, `canfail`, `didrun`, `nondet`,
+`restore-verified`, `undetermined`), and four of those publish the same version
+number to npm out of the same tree, so the two registries can be compared rather
+than taken on trust.
 
 I reimplement systems I want to understand, then write down where my design turned
 out to be wrong. The write-up is usually the more useful half.
 
 **Working with:** JavaScript / TypeScript · Node.js · Python · Swift · SQL ·
-Kubernetes · Docker · CI/CD · MongoDB / Postgres · MCP and LLM integration
+Kubernetes · Docker · CI/CD · MongoDB / Postgres · PyPI and npm packaging ·
+LLM evaluation
 
 **A few things I've built:**
 
